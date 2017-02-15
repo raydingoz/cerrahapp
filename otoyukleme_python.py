@@ -6,13 +6,13 @@ import os
 import comtypes.client
 
 
-def DosyaIndir():
+def DosyaIndir():                   #download file from internet and save same file
     print("indirme başladı...")
     url = "http://194.27.141.99/egitim_ogretim/ders/2016_2017/16_17_dersprog_ou.doc"
     urlretrieve(url, "16_17_dersprog_ou.doc")
     print("indirme tamamlandı")
 
-def DosyayıCevir():
+def DosyayıCevir():                 #convert .doc file to .docx
     print("çevirme başladı...")
     wdFormatPDF = 16
     word = comtypes.client.CreateObject('Word.Application')
@@ -22,27 +22,19 @@ def DosyayıCevir():
     word.Quit()
     print("çevirme tamamlandı")
 
-def Yukle():
+def Yukle():                        #read table from .docx and do something
     document = Document()
     document = Document('16_17_dersprog_ou.docx')
-    table = document.tables[1]
-    # Data will be a list of rows represented as dictionaries
-    # containing each row's data.
+    table = document.tables[1]      #i need second table
     data = []
-
     keys = None
-
     prog = 0
     for i, row in enumerate(table.rows):
         sureilk = time.time()
         text = (cell.text for cell in row.cells)
-        # Establish the mapping based on the first row
-        # headers; these will become the keys of our dictionary
         if i == 0:
             keys = tuple(text)
             continue
-        # Construct a dictionary for this row, mapping
-        # keys to values for this row
         row_data = dict(zip(keys, text))
         print()
         amfi = row_data.__getitem__("Amfi")
