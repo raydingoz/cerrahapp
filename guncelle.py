@@ -27,7 +27,7 @@ def DosyayıCevir():  # convert .doc file to .docx
     print("__________________")
 def TabloyuSil():
     print("Silme Başladı...")
-    connection = pymysql.connect(host=''******',
+    connection = pymysql.connect(host='******',
                                  user='******',
                                  password='******',
                                  db='*******',
@@ -45,7 +45,7 @@ def TabloyuSil():
         print("________________")
 
 def DB_Ekle(_amfi,_dersno,_tarih,_konu,_hoca,_ders,_sureilk,_prog,_i):
-    connection = pymysql.connect(host=''******',
+    connection = pymysql.connect(host='******',
                                  user='******',
                                  password='******',
                                  db='*******',
