@@ -9,3 +9,6 @@ Cerrahpaşa Tıp Mobil Uygulaması
 #
  yemek listesine, ders listesine vs bir kere internet açıkken bakmanız yeterli.
  website offline kullanılabilir.
+ 
+ 
+ geliştirme dosyalarına yukardan ulaşabilirsiniz
